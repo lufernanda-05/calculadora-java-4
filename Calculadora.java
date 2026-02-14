@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Clase principal que maneja la interacción 
+// Clase principal de la calculadora
 public class Calculadora {
    private Operaciones operaciones;
 
@@ -64,17 +64,41 @@ public class Calculadora {
          imprimir(resultado);
       }
 
+      // Potencia
+      System.out.println("Inicio POTENCIA");
+      num1 = leer();
+      if (num1 == -1) {
+         System.out.println("No es un numero, Finaliza programa ");
+         return;
+      }
+      num2 = leer();
+      if (num2 == -1) {
+         System.out.println("No es un numero, Finaliza programa ");
+         return;
+      }
+      resultado = operaciones.potencia(num1, num2);
+      imprimir(resultado);
+
+      // Raíz cuadrada
+      System.out.println("Inicio RAIZ CUADRADA");
+      num1 = leer();
+      if (num1 == -1) {
+         System.out.println("No es un numero, Finaliza programa ");
+         return;
+      }
+      resultado = operaciones.raizCuadrada(num1);
+      imprimir(resultado);
+
       System.out.println("GRACIAS POR PARTICIPAR");
    }
 
    public long leer() {
-      Scanner sc = new Scanner(System.in);
-      System.out.print("Digite un numero : ");
-      String dato = sc.nextLine();
-      if (dato.isEmpty()) {
+      Scanner scanner = new Scanner(System.in);
+      System.out.print("Introduce un número: ");
+      try {
+         return scanner.nextLong();
+      } catch (Exception e) {
          return -1;
-      } else {
-         return Long.parseLong(dato);
       }
    }
 
@@ -83,7 +107,7 @@ public class Calculadora {
    }
 }
 
-// Clase peraciones matemáticas
+// Clase operaciones matemáticas
 class Operaciones {
    public long sumar(long a, long b) {
       return a + b;
@@ -103,5 +127,17 @@ class Operaciones {
          return -1; // Indicador de error
       }
       return a / b;
+   }
+
+   public long potencia(long a, long b) {
+      long resultado = 1;
+      for (long i = 0; i < b; i++) {
+         resultado *= a;
+      }
+      return resultado;
+   }
+
+   public long raizCuadrada(long a) {
+      return (long) Math.sqrt(a);
    }
 }
