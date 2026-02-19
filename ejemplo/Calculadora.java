@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 public class Calculadora {
     private Operaciones operaciones;
+    private Scanner scanner;
 
     public Calculadora() {
         this.operaciones = new Operaciones();
+        this.scanner = new Scanner(System.in);
     }
 
     public void iniciar() {
@@ -29,6 +31,7 @@ public class Calculadora {
         realizarRaizCuadrada();
 
         System.out.println("GRACIAS POR PARTICIPAR");
+        scanner.close();
     }
 
     private void realizarOperacion(String tipo) {
@@ -77,7 +80,6 @@ public class Calculadora {
     }
 
     public long leer() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce un número: ");
         try {
             return scanner.nextLong();
