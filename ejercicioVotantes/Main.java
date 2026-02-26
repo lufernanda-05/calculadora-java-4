@@ -17,7 +17,7 @@ public class Main {
         String apellido = consola.leer("Ingrese el apellido: ");
         long numeroIdentificacion = Long.parseLong(consola.leer("Ingrese el número de identificación: "));
         LocalDate fechaNacimiento = procesos
-                .convertirStringDate(consola.leer("Ingrese la fecha de nacimiento (yyyy-MM-dd): "));
+                .convertirStringDate(consola.leer("Ingrese la fecha de nacimiento (dia-mes-año): "));
 
         Votante votante = new Votante(nombre, apellido, numeroIdentificacion, fechaNacimiento);
         int edad = votante.calcularEdad();
