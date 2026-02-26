@@ -61,9 +61,8 @@ public class Main2 {
         String dato = sc.nextLine();
         if (dato.isEmpty()) {
             return -1;
-        } else {
-            return Long.parseLong(dato);
         }
+        return Long.parseLong(dato);
 
     }
 
