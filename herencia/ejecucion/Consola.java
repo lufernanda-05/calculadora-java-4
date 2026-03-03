@@ -6,7 +6,7 @@ import herencia.Felino;
 
 public class Consola {
     public static void main(String[] args) {
-        // Crear un objeto de la clase Animal
+        // objeto de la clase Animal
         Animal animal = new Animal();
         animal.setNombre("Firulais");
         animal.setEdad(5);
@@ -14,7 +14,7 @@ public class Consola {
         System.out.println("Edad: " + animal.getEdad());
         System.out.println();
 
-        // Crear un objeto de la clase Felino
+        // objeto de la clase Felino
         Felino felino = new Felino();
         felino.setNombre("Garfield");
         felino.setEdad(7);
@@ -26,7 +26,7 @@ public class Consola {
         System.out.println("Es carnívoro: " + felino.isEsCarnivoro());
         System.out.println();
 
-        // Crear un objeto de la clase Aves
+        // objeto de la clase Aves
         Aves aves = new Aves();
         aves.setNombre("Piolín");
         aves.setEdad(2);
